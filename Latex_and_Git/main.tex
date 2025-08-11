@@ -1,25 +1,34 @@
 \documentclass[a4paper,man,natbib,floatsintext,12pt]{apa7}
 
-%---------BEGIN PREAMBLE-----------------
 \usepackage[english]{babel} %character and hyphenation rules specific to the language you choose
 %\usepackage[utf8x]{inputenc}
 \usepackage{graphicx}
 \usepackage{color}
 \usepackage{tikz}
 \usepackage{amsmath}
-\usepackage{blindtext} %allows to add filler text while testing document formatting
-\usepackage{tabularx} % great for APA-style Tables
-\usepackage{siunitx}  % Required for good table alignmen
-\sisetup{             % Set up siuitx options for optimal tabular data
+\usepackage{blindtext}
+\usepackage{tabularx} %great for APA-style Tables
+\usepackage{siunitx} % Required for good table alignmen
+\sisetup{
   round-mode          = places, % Rounds numbers
   round-precision     = 2, % to 2 places
 }
 \usepackage{multirow}
 \usepackage{booktabs}
 \usepackage{wrapfig}
+\usetikzlibrary{shapes,decorations,arrows,calc,arrows.meta,fit,positioning}
+\tikzset{
+    -Latex,auto,node distance =1 cm and 1 cm,semithick,
+    latent/.style ={ellipse, draw, minimum width = 0.7 cm},
+    observed/.style ={rectangle, draw},
+    bidirected/.style={Latex-Latex,dashed},
+    el/.style = {inner sep=2pt, align=left, sloped}
+}
+\newcommand{\sigFtest}[4]{\textit{F}(#1,#2) = #3, \textit{p}$<$#4}
+\newcommand{\nonsigFtest}[3]{\textit{F}(#1,#2) = #3, \textit{p}$>$.05}
 
 
-\title{My First Manuscript in \LaTeX}
+\title{My First Manuscript in \LaTeX  }
 \shorttitle{This is the short title}
 \author{Paul D. Kieffaber}
 \affiliation{College of William \& Mary}
@@ -27,17 +36,25 @@
 \abstract{\blindtext}
 \keywords{APA style, demonstration}
 \authornote{I would like to thank my dogs for sitting quietly while I worked on this.}
+\leftheader{Alternate page header in man mode}
 
 %-------------- END PREAMBLE  -------------------
 
-\include{intro.tex}
 
-\include{method.tex}
+\begin{document}
 
-\include{results.tex}
+\maketitle  %Insert my APA style title page
 
-\include{discussion.tex}
+\input{intro.tex}
+
+\input{method.tex}
+
+\input{results.tex}
+
+\input{discussion.tex}
+
 
 \bibliography{references.bib}
 
 \end{document}
+https://www.overleaf.com/project/64ef8e5b3faa92d4248ddcf9
