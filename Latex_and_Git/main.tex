@@ -1,0 +1,43 @@
+\documentclass[a4paper,man,natbib,floatsintext,12pt]{apa7}
+
+%---------BEGIN PREAMBLE-----------------
+\usepackage[english]{babel} %character and hyphenation rules specific to the language you choose
+%\usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{blindtext} %allows to add filler text while testing document formatting
+\usepackage{tabularx} % great for APA-style Tables
+\usepackage{siunitx}  % Required for good table alignmen
+\sisetup{             % Set up siuitx options for optimal tabular data
+  round-mode          = places, % Rounds numbers
+  round-precision     = 2, % to 2 places
+}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{wrapfig}
+
+
+\title{My First Manuscript in \LaTeX}
+\shorttitle{This is the short title}
+\author{Paul D. Kieffaber}
+\affiliation{College of William \& Mary}
+\journal{The Best Psychology Journal EVER!}
+\abstract{\blindtext}
+\keywords{APA style, demonstration}
+\authornote{I would like to thank my dogs for sitting quietly while I worked on this.}
+
+%-------------- END PREAMBLE  -------------------
+
+\include{intro.tex}
+
+\include{method.tex}
+
+\include{results.tex}
+
+\include{discussion.tex}
+
+\bibliography{references.bib}
+
+\end{document}
