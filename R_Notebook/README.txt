@@ -1,0 +1,1 @@
+Use this folder to house all of your R analyses.
